@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:student/components/bg.dart';
-import 'package:student/components/navbar.dart';
+import 'package:student/components/doubtcomp.dart';
+import 'package:student/components/footer.dart';
 import 'package:student/components/svglogo.dart';
-import 'package:student/components/textform.dart';
 import 'package:student/globals.dart';
 
 class DoubtScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _DoubtScreenState extends State<DoubtScreen> {
                 'ERUDITION',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
-                  fontSize: 32.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -69,222 +69,15 @@ class _DoubtScreenState extends State<DoubtScreen> {
                         SizedBox(
                           height: 50,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.90,
-                          height: MediaQuery.of(context).size.width * 0.35,
-                          decoration: BoxDecoration(
-                            color: Color(0xffDBE6FD).withOpacity(0.5),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(32),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 28.0, vertical: 8.0),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'What is Data Warehouse?',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 26.0,
-                                        color: Colors.white,
-                                        height: 1.34,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-image-64.png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-internet-64 (1).png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-comments-64.png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                        DoubtComp(
+                          ques: "What is Data warehouse?",
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.90,
-                          height: MediaQuery.of(context).size.width * 0.35,
-                          decoration: BoxDecoration(
-                            color: Color(0xffDBE6FD).withOpacity(0.5),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(32),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 28.0, vertical: 8.0),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'What is Data?',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 26.0,
-                                        color: Colors.white,
-                                        height: 1.34,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-image-64.png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-internet-64 (1).png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-comments-64.png")),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
+                        DoubtComp(ques: " 'What is Data?'"),
                         Expanded(child: Container()),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width,
-                          color: Color(0xffDBE6FD),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Navbar(
-                                  img: "awesome-sticky-note",
-                                  title: "Notice Board"),
-                              Navbar(
-                                  img: "awesome-money-check-alt",
-                                  title: "Fees Details"),
-                              Navbar(
-                                  img: "material-contacts",
-                                  title: "Contact Us"),
-                              Navbar(
-                                  img: "awesome-info-circle",
-                                  title: "About US"),
-                            ],
-                          ),
-                        ),
+                        footer(),
                       ],
                     ),
                   ),

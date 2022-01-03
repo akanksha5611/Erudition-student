@@ -2,9 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:student/components/bg.dart';
-import 'package:student/components/navbar.dart';
-import 'package:student/components/svglogo.dart';
-import 'package:student/components/textform.dart';
+import 'package:student/components/footer.dart';
 import 'package:student/globals.dart';
 
 class FeesDetailsScreen extends StatefulWidget {
@@ -35,7 +33,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                 'ERUDITION',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
-                  fontSize: 32.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -72,7 +70,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                               'Fees Details',
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
-                                fontSize: 40.0,
+                                fontSize: 26.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                                 height: 1.35,
@@ -82,15 +80,15 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                           ],
                         )),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(32)),
+                          borderRadius: BorderRadius.all(Radius.circular(28)),
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.90,
-                              height: MediaQuery.of(context).size.width * 1.15,
+                              width: MediaQuery.of(context).size.width * 0.83,
+                              height: MediaQuery.of(context).size.width * 1.09,
                               decoration: BoxDecoration(
                                   // color: Color(0xffDBE6FD).withOpacity(0.5),
                                   border: Border.all(
@@ -122,7 +120,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                     'Class 2021-2022',
                                                     style: TextStyle(
                                                       fontFamily: 'Segoe UI',
-                                                      fontSize: 25.0,
+                                                      fontSize: 22.0,
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.w700,
@@ -158,7 +156,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -181,7 +179,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -204,7 +202,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -227,7 +225,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -250,7 +248,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -273,7 +271,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                                                         style: TextStyle(
                                                           fontFamily:
                                                               'Segoe UI',
-                                                          fontSize: 20.0,
+                                                          fontSize: 16.0,
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -312,28 +310,7 @@ class _FeesDetailsScreenState extends State<FeesDetailsScreen> {
                           ),
                         ),
                         Expanded(child: Container()),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width,
-                          color: Color(0xffDBE6FD),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Navbar(
-                                  img: "awesome-sticky-note",
-                                  title: "Notice Board"),
-                              Navbar(
-                                  img: "awesome-money-check-alt",
-                                  title: "Fees Details"),
-                              Navbar(
-                                  img: "material-contacts",
-                                  title: "Contact Us"),
-                              Navbar(
-                                  img: "awesome-info-circle",
-                                  title: "About US"),
-                            ],
-                          ),
-                        ),
+                        footer(),
                       ],
                     ),
                   ),

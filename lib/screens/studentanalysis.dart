@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:student/components/RoundCont.dart';
 import 'package:student/components/bg.dart';
-import 'package:student/components/navbar.dart';
+import 'package:student/components/footer.dart';
+import 'package:student/components/greybut.dart';
 import 'package:student/components/svglogo.dart';
-import 'package:student/components/textform.dart';
 
 class AnalysisScreen extends StatefulWidget {
   const AnalysisScreen({Key key}) : super(key: key);
@@ -32,7 +33,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                 'ERUDITION',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
-                  fontSize: 32.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -68,23 +69,8 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                         SizedBox(
                           height: 50,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.75,
-                          child: TextForm(
-                            hint: "Class I'D:",
-                            inputDecoration: InputDecoration(
-                                hintText: "Class I'D:",
-                                border: UnderlineInputBorder(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(32),
-                                    topRight: Radius.circular(32),
-                                  ),
-                                ),
-                                fillColor: Color(0xffDBE6FD),
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: 28.0, vertical: 40.0),
-                                filled: true),
-                          ),
+                        RoundCont(
+                          title: "Class I'D:",
                         ),
                         SizedBox(
                           height: 1,
@@ -123,68 +109,11 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                             ),
                           ),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xffDBE6FD),
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(32),
-                              bottomLeft: Radius.circular(32),
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.75,
-                          height: MediaQuery.of(context).size.height * 0.04,
-                          child: Center(
-                            child: RawMaterialButton(
-                              onPressed: () {},
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.2,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.025,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF2C3B5A).withOpacity(0.2),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(32),
-                                  ),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'ANALYZE',
-                                    style: TextStyle(
-                                      fontFamily: 'Segoe UI',
-                                      fontSize: 14.0,
-                                      color: const Color(0xFF2C3B5A),
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.36,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                        GrayBut(
+                          title: "ANALYZE",
                         ),
                         Expanded(child: Container()),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width,
-                          color: Color(0xffDBE6FD),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Navbar(
-                                  img: "awesome-sticky-note",
-                                  title: "Notice Board"),
-                              Navbar(
-                                  img: "awesome-money-check-alt",
-                                  title: "Fees Details"),
-                              Navbar(
-                                  img: "material-contacts",
-                                  title: "Contact Us"),
-                              Navbar(
-                                  img: "awesome-info-circle",
-                                  title: "About US"),
-                            ],
-                          ),
-                        ),
+                        footer(),
                       ],
                     ),
                   ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:student/components/bg.dart';
-import 'package:student/components/navbar.dart';
+import 'package:student/components/footer.dart';
+import 'package:student/components/logocomp.dart';
 import 'package:student/components/svglogo.dart';
-import 'package:student/components/textform.dart';
 import 'package:student/globals.dart';
 
 class MaterialNextScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _MaterialNextScreenState extends State<MaterialNextScreen> {
                 'ERUDITION',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
-                  fontSize: 32.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -82,14 +82,14 @@ class _MaterialNextScreenState extends State<MaterialNextScreen> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 28.0, vertical: 8.0),
+                                    horizontal: 28.0, vertical: 16.0),
                                 child: Row(
                                   children: [
                                     Text(
-                                      'Selected Subject',
+                                      'Selected Subject :',
                                       style: TextStyle(
                                         fontFamily: 'Segoe UI',
-                                        fontSize: 26.0,
+                                        fontSize: 20.0,
                                         color: Colors.white,
                                         height: 1.34,
                                       ),
@@ -108,35 +108,15 @@ class _MaterialNextScreenState extends State<MaterialNextScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-download-64.png")),
-                                        ),
+                                      LogoComp(
+                                        img: "icons8-download-64",
                                       ),
                                     ],
                                   ),
                                   Column(
                                     children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-view-64.png")),
-                                        ),
+                                      LogoComp(
+                                        img: "icons8-view-64",
                                       ),
                                     ],
                                   ),
@@ -144,18 +124,8 @@ class _MaterialNextScreenState extends State<MaterialNextScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Container(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.1,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "lib/assets/icons/icons8-internet-64 (1).png")),
-                                        ),
+                                      LogoComp(
+                                        img: "icons8-internet-64 (1)",
                                       ),
                                     ],
                                   ),
@@ -165,28 +135,7 @@ class _MaterialNextScreenState extends State<MaterialNextScreen> {
                           ),
                         ),
                         Expanded(child: Container()),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width,
-                          color: Color(0xffDBE6FD),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Navbar(
-                                  img: "awesome-sticky-note",
-                                  title: "Notice Board"),
-                              Navbar(
-                                  img: "awesome-money-check-alt",
-                                  title: "Fees Details"),
-                              Navbar(
-                                  img: "material-contacts",
-                                  title: "Contact Us"),
-                              Navbar(
-                                  img: "awesome-info-circle",
-                                  title: "About US"),
-                            ],
-                          ),
-                        ),
+                        footer(),
                       ],
                     ),
                   ),

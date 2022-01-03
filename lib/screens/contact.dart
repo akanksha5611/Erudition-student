@@ -25,7 +25,7 @@ class _ContactPageState extends State<ContactPage> {
           'CONTACT US',
           style: TextStyle(
             fontFamily: 'Segoe UI',
-            fontSize: 32.0,
+            fontSize: 26.0,
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),

@@ -95,7 +95,7 @@ class _IntroScreenState extends State<IntroScreen> {
                           context,
                           PageTransition(
                             type: PageTransitionType.fade,
-                            child: ScheduleScreen(),
+                            child: MaterialNextScreen(),
                           ),
                         );
                       },

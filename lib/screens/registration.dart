@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student/components/Regfield.dart';
 import 'package:student/components/bg.dart';
+import 'package:student/components/footer.dart';
 import 'package:student/globals.dart' as g;
 
 class RegistrationPage extends StatefulWidget {
@@ -28,7 +30,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 'ERUDITION',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
-                  fontSize: 32.0,
+                  fontSize: 20.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -59,7 +61,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         height: 30,
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.70,
+                        height: MediaQuery.of(context).size.height * 0.55,
                         width: MediaQuery.of(context).size.width * 0.85,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,71 +71,23 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               'Registration',
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
-                                fontSize: 37.0,
+                                fontSize: 22.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
                                 height: 1.35,
                               ),
                             ),
-                            TextFormField(
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: 16.0,
-                                color: const Color(0xFF6E6B6B),
-                              ),
-                              decoration: InputDecoration(
-                                  hintText: "Name:",
-                                  border: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(27)),
-                                  fillColor: Color(0xffDBE6FD),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 28.0, vertical: 16.0),
-                                  filled: true),
+                            Regfield(
+                              hint: "Name :",
                             ),
-                            TextFormField(
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: 16.0,
-                                color: const Color(0xFF6E6B6B),
-                              ),
-                              decoration: InputDecoration(
-                                  hintText: "Email ID:",
-                                  border: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(27)),
-                                  fillColor: Color(0xffDBE6FD),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 28.0, vertical: 16.0),
-                                  filled: true),
+                            Regfield(
+                              hint: "Email :",
                             ),
-                            TextFormField(
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: 16.0,
-                                color: const Color(0xFF6E6B6B),
-                              ),
-                              decoration: InputDecoration(
-                                  hintText: "Password:",
-                                  border: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(27)),
-                                  fillColor: Color(0xffDBE6FD),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 28.0, vertical: 16.0),
-                                  filled: true),
+                            Regfield(
+                              hint: "Password :",
                             ),
-                            TextFormField(
-                              style: TextStyle(
-                                fontFamily: 'Segoe UI',
-                                fontSize: 16.0,
-                                color: const Color(0xFF6E6B6B),
-                              ),
-                              decoration: InputDecoration(
-                                  hintText: "Confirm Password:",
-                                  border: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(27)),
-                                  fillColor: Color(0xffDBE6FD),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 28.0, vertical: 16.0),
-                                  filled: true),
+                            Regfield(
+                              hint: "Confirm Password :",
                             ),
                             Container(
                               child: Center(
@@ -160,6 +114,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           ],
                         ),
                       ),
+                      Expanded(child: Container()),
+                      footer(),
                     ],
                   ),
                 )),

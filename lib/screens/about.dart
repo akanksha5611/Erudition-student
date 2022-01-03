@@ -26,7 +26,7 @@ class _AboutScreenState extends State<AboutScreen> {
             'ABOUT US',
             style: TextStyle(
               fontFamily: 'Segoe UI',
-              fontSize: 32.0,
+              fontSize: 26.0,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
