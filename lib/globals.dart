@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:student/models/user.dart';
 
 //measurements
 double width, height;
+
+//user in app'
+UserinApp userinApp;
 
 //color swatch
 Map<int, Color> color = {

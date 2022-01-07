@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:student/components/bg.dart';
 import 'package:student/components/logbut.dart';
 import 'package:student/globals.dart' as g;
+import 'package:student/services/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
@@ -11,9 +13,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController email = TextEditingController(text: "");
+  TextEditingController pass = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
+    g.width = MediaQuery.of(context).size.width;
+    g.height = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: bg(context) +
             [
@@ -75,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 40,
                             ),
                             TextFormField(
+                              controller: email,
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
                                 fontSize: 16.0,
@@ -92,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 10,
                             ),
                             TextFormField(
+                              controller: pass,
                               obscureText: true,
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
@@ -161,7 +170,10 @@ class _LoginPageState extends State<LoginPage> {
                         height: 50,
                       ),
                       LogBut(
-                        onpress: () {},
+                        onpress: () async {
+                          AuthServices()
+                              .signin(email.text.trim(), pass.text.trim());
+                        },
                       ),
                       SizedBox(
                         height: 30,

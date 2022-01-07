@@ -5,6 +5,7 @@ import 'package:student/components/bg.dart';
 import 'package:student/components/footer.dart';
 import 'package:student/components/stuhome.dart';
 import 'package:student/globals.dart';
+import 'package:student/services/auth.dart';
 
 class StudentHomeScreen extends StatefulWidget {
   const StudentHomeScreen({Key key}) : super(key: key);
@@ -21,13 +22,18 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           actions: [
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-              width: 50,
-              height: 20,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("lib/assets/icons/signout.png"),
+            RawMaterialButton(
+              onPressed: () async {
+                AuthServices().signOut();
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 9),
+                width: 50,
+                height: 20,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("lib/assets/icons/signout.png"),
+                  ),
                 ),
               ),
             )
