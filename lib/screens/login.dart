@@ -83,6 +83,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             TextFormField(
                               controller: email,
+                              validator: (email) {
+                                if (email.isEmpty) {
+                                  return "Email field cannot be empty";
+                                }
+                                return null;
+                              },
                               style: TextStyle(
                                 fontFamily: 'Segoe UI',
                                 fontSize: 16.0,
@@ -120,49 +126,49 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             // Group: Remember me
 
-                            SizedBox(
-                              width: g.width * 0.8,
-                              height: 32.0,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Expanded(child: Container()),
-                                  Align(
-                                    alignment: Alignment(0.0, 0.09),
-                                    child: Text(
-                                      'Remember me',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 16.0,
-                                        color: const Color(0xFFC7C1C1),
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    alignment: Alignment(0.87, 0.0),
-                                    width: 56.0,
-                                    height: 32.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      color: const Color(0xFF74EB96),
-                                    ),
-                                    child: Container(
-                                      width: 26.0,
-                                      height: 26.0,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // SizedBox(
+                            //   width: g.width * 0.8,
+                            //   height: 32.0,
+                            //   child: Row(
+                            //     mainAxisAlignment:
+                            //         MainAxisAlignment.spaceBetween,
+                            //     children: <Widget>[
+                            //       Expanded(child: Container()),
+                            //       Align(
+                            //         alignment: Alignment(0.0, 0.09),
+                            //         child: Text(
+                            //           'Remember me',
+                            //           style: TextStyle(
+                            //             fontFamily: 'Segoe UI',
+                            //             fontSize: 16.0,
+                            //             color: const Color(0xFFC7C1C1),
+                            //             fontWeight: FontWeight.w300,
+                            //           ),
+                            //         ),
+                            //       ),
+                            //       SizedBox(
+                            //         width: 10,
+                            //       ),
+                            //       Container(
+                            //         alignment: Alignment(0.87, 0.0),
+                            //         width: 56.0,
+                            //         height: 32.0,
+                            //         decoration: BoxDecoration(
+                            //           borderRadius: BorderRadius.circular(16.0),
+                            //           color: const Color(0xFF74EB96),
+                            //         ),
+                            //         child: Container(
+                            //           width: 26.0,
+                            //           height: 26.0,
+                            //           decoration: BoxDecoration(
+                            //             shape: BoxShape.circle,
+                            //             color: Colors.white,
+                            //           ),
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

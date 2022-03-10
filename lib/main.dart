@@ -2,11 +2,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student/models/user.dart';
+import 'package:student/screens/about.dart';
+import 'package:student/screens/contact.dart';
+import 'package:student/screens/doubt.dart';
 import 'package:student/screens/intro.dart';
 import 'package:student/globals.dart' as g;
 import 'package:student/screens/loading.dart';
 import 'package:student/screens/login.dart';
 import 'package:student/screens/registration.dart';
+import 'package:student/screens/studentanalysis.dart';
+import 'package:student/screens/studenthome.dart';
 import 'package:student/services/auth.dart';
 import 'package:student/services/wrapper.dart';
 
@@ -34,7 +39,7 @@ class MyApp extends StatelessWidget {
               home: StreamProvider<UserinApp>.value(
                 value: auth.userIsIn,
                 initialData: null,
-                child: Wrapper(),
+                child: MyHomePage(),
               ));
         }
         return MaterialApp(
@@ -69,13 +74,13 @@ class _MyHomePageState extends State<MyHomePage> {
   AuthServices auth = AuthServices();
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<UserinApp>.value(
-      value: auth.userIsIn,
-      initialData: null,
-      child: Wrapper(),
-    );
+    // return StreamProvider<UserinApp>.value(
+    //   value: auth.userIsIn,
+    //   initialData: null,
+    //   child: Wrapper(),
+    // );
     // return ContactPage();
     // return AboutScreen();
-    // return AnalysisScreen();
+    return StudentHomeScreen();
   }
 }

@@ -1,10 +1,16 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:student/components/bg.dart';
 import 'package:student/components/footer.dart';
 import 'package:student/components/stuhome.dart';
 import 'package:student/globals.dart';
+import 'package:student/screens/doubt.dart';
+import 'package:student/screens/onlinelecture.dart';
+import 'package:student/screens/schedule.dart';
+import 'package:student/screens/studentanalysis.dart';
+import 'package:student/screens/studymaterial.dart';
 import 'package:student/services/auth.dart';
 
 class StudentHomeScreen extends StatefulWidget {
@@ -131,6 +137,15 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                               StuHome(
                                 img: "analysis",
                                 title: "Analysis",
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      child: AnalysisScreen(),
+                                      type: PageTransitionType.fade,
+                                    ),
+                                  );
+                                },
                               ),
                               SizedBox(
                                 width: 20,
@@ -138,6 +153,15 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                               StuHome(
                                 img: "Schedule",
                                 title: "Schedule",
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      child: ScheduleScreen(),
+                                      type: PageTransitionType.fade,
+                                    ),
+                                  );
+                                },
                               ),
                               SizedBox(
                                 height: 20,
@@ -148,6 +172,15 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                                 child: StuHome(
                                   title: "Study Material",
                                   img: "StudyMaterial",
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        child: MaterialScreen(),
+                                        type: PageTransitionType.fade,
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                               SizedBox(
@@ -159,6 +192,15 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                                 child: StuHome(
                                   title: "AskDoubt",
                                   img: "AskDoubt",
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        child: DoubtScreen(),
+                                        type: PageTransitionType.fade,
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                               SizedBox(
@@ -170,6 +212,15 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                                 child: StuHome(
                                   title: "OnlineLecture",
                                   img: "OnlineLecture",
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        child: OnlineLectureScreen(),
+                                        type: PageTransitionType.fade,
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             ],
